@@ -14,7 +14,11 @@ pipeline {
     }
 
 	   stage('Build Image'){
-        	sh 'docker build -t kv/app:1.0.0 .'
+        	steps {
+
+        		sh 'docker build -t kv/app:1.0.0 .'
+
+        	}
         }  	
 
 
