@@ -10,12 +10,11 @@ pipeline {
                  git url: 'https://github.com/kshitijcode/kv', branch: "${params.branch}"
        
            }
-    }
-    
-    agent { dockerfile true }
 
-    
-    cleanWs()
+        stage('Build image'){
+        	sh 'docker build -t kv/app:1.0.0 .'
+        }   
+    }
 
 
     }
