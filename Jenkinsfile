@@ -10,12 +10,12 @@ pipeline {
             steps {
                  git url: 'https://github.com/kshitijcode/kv', branch: "${params.branch}"
        
-           }
-
-        stage('Build image'){
-        	sh 'docker build -t kv/app:1.0.0 .'
-        }   
+           } 
     }
+
+	   stage('Build Image'){
+        	sh 'docker build -t kv/app:1.0.0 .'
+        }  	
 
 
     }
