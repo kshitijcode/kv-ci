@@ -1,7 +1,8 @@
 properties([parameters([string(defaultValue: 'master', description: 'Please specify the branch.', name: 'branch', trim: false)])])
 
 pipeline {
-
+	
+	agent any
     
 
     stages {
