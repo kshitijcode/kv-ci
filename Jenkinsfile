@@ -2,14 +2,20 @@ properties([parameters([string(defaultValue: 'master', description: 'Please spec
 
 pipeline {
 
-    agent { dockerfile true }
+    
 
     stages {
         stage('Clone repository') {
             steps {
                  git url: 'https://github.com/kshitijcode/kv', branch: "${params.branch}"
-            }
+       
+           }
     }
+    
+    agent { dockerfile true }
+
+    
+    cleanWs()
 
 
     }
